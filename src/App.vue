@@ -6,7 +6,9 @@ import HelloWorld from './components/HelloWorld.vue'
 <template>
   <div class="min-h-screen bg-slate-50 text-slate-900">
     <NavBar />
-
+  
+  </div>
+<!-- 
     <main class="pt-24">
       <section id="home" class="bg-white border-b border-slate-200 py-20">
         <div class="max-w-6xl mx-auto px-4 text-center">
@@ -50,6 +52,5 @@ import HelloWorld from './components/HelloWorld.vue'
           </p>
         </div>
       </section>
-    </main>
-  </div>
+    </main> -->
 </template>
