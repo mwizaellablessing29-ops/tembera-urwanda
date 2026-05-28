@@ -1,11 +1,14 @@
 <script setup>
 import NavBar from './components/NavBar.vue'
 import HelloWorld from './components/HelloWorld.vue'
+import footer from './components/footer.vue';
+import Footer from './components/footer.vue';
 </script>
 
 <template>
   <div class="min-h-screen bg-slate-50 text-slate-900">
     <NavBar />
+    <Footer />
   
   </div>
 <!-- 
