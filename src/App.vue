@@ -1,7 +1,6 @@
 <script setup>
 import NavBar from './components/NavBar.vue'
 import HelloWorld from './components/HelloWorld.vue'
-import footer from './components/footer.vue';
 import Footer from './components/footer.vue';
 </script>
 

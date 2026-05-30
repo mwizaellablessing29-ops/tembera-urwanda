@@ -22,7 +22,7 @@
         </div>
 
         <div class="overflow-hidden rounded-[2rem] bg-green-100 shadow-2xl">
-          <img src="..src/assets/Lake Kivu in Rwanda.jpg" alt="Rwanda travel landscape" class="h-full w-full object-cover" />
+          <img src="../assets/Lake Kivu in Rwanda.jpg" alt="Rwanda travel landscape" class="h-full w-full object-cover" />
         </div>
       </div>
 
