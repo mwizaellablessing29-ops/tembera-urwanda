@@ -1,3 +1,7 @@
+<script setup>
+import { labels } from '../stores/language.js'
+</script>
+
 <template>
   <section class="bg-white text-green-900">
     <div class="mx-auto max-w-6xl px-6 py-16 md:px-12">
@@ -5,18 +9,17 @@
         <div>
           <p class="text-sm uppercase tracking-[0.35em] text-yellow-500">About Tembera Urwanda</p>
           <h1 class="mt-4 text-4xl font-extrabold leading-tight sm:text-5xl">
-            Explore Rwanda with ease and confidence.
+            {{ labels.aboutHeading }}
           </h1>
           <p class="mt-6 max-w-2xl text-base leading-8 text-green-700">
-            A beginner-friendly guide for travelers who want to experience Rwanda’s beauty, culture, and wildlife.
-            Discover simple planning tips, top destinations, and local experiences designed for first-time visitors.
+            {{ labels.aboutLead }}
           </p>
           <div class="mt-8 flex flex-col gap-4 sm:flex-row">
             <router-link to="/services" class="inline-flex rounded-full bg-green-900 px-8 py-3 text-sm font-semibold text-white transition hover:bg-yellow-400 hover:text-green-900">
-              Our services
+              {{ labels.services }}
             </router-link>
             <router-link to="/contact" class="inline-flex rounded-full border border-green-900 bg-white px-8 py-3 text-sm font-semibold text-green-900 transition hover:bg-green-900 hover:text-white">
-              Contact us
+              {{ labels.contact }}
             </router-link>
           </div>
         </div>

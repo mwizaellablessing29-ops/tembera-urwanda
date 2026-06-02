@@ -3,7 +3,6 @@ import Home from '../views/home.vue'
 import About from '../views/about.vue'
 import Contact from '../views/contact.vue'
 import Services from '../views/services.vue'
-
 const routes = [
     {
         path: '/',
@@ -24,6 +23,16 @@ const routes = [
         path: '/services',
         name: 'service',
         component: Services,
+    },
+    {
+        path: '/login',
+        name: 'login',
+        component: () => import('../views/login.vue')
+    },
+    {
+        path: '/register',
+        name: 'register',
+        component: () => import('../views/register.vue')
     },
     
     // --- GALLERY DROPDOWN ROUTES ---
@@ -65,6 +74,9 @@ const routes = [
         component: () => import('../views/destinations/Kigali.vue')
     }
 ];
+
+
+
 
 const router = createRouter({
     history: createWebHashHistory(),

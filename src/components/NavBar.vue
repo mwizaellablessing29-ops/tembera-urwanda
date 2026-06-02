@@ -1,6 +1,7 @@
 <script setup>
-import { ref } from 'vue'
+import { computed, ref } from 'vue'
 import { RouterLink, RouterView } from 'vue-router'
+import { currentLanguage, setLanguage, labels } from '../stores/language.js'
 
 const isGalleryOpen = ref(false)
 const isDestinationOpen = ref(false)
@@ -10,20 +11,20 @@ const isDestinationOpen = ref(false)
   <div class="min-h-screen flex flex-col bg-gray-50">
     <nav class="bg-green-800 text-white px-8 py-4 flex items-center justify-between shadow-md">
       <div class="flex items-center gap-3">
-        <img src="../assets/sos1.svg" class="h-8 w-8" alt="Logo" />
+        <img src="/favicon.svg" class="h-8 w-8" alt="Logo" />
       </div>
 
       <ul class="flex gap-10 items-center justify-end font-medium">
         <li>
-          <RouterLink to="/" class="nav-link">Home</RouterLink>
+          <RouterLink to="/" class="nav-link">{{ labels.home }}</RouterLink>
         </li>
 
         <li>
-          <RouterLink to="/about" class="nav-link">About</RouterLink>
+          <RouterLink to="/about" class="nav-link">{{ labels.about }}</RouterLink>
         </li>
 
         <li>
-          <RouterLink to="/services" class="nav-link">Services</RouterLink>
+          <RouterLink to="/services" class="nav-link">{{ labels.services }}</RouterLink>
         </li>
 
         <li
@@ -32,7 +33,7 @@ const isDestinationOpen = ref(false)
           @mouseleave="isGalleryOpen = false"
         >
           <span class="nav-link">
-            Gallery
+            {{ labels.gallery }}
             <span
               class="text-xs transition-transform duration-200"
               :class="{ 'rotate-180 text-yellow-300': isGalleryOpen }"
@@ -44,10 +45,10 @@ const isDestinationOpen = ref(false)
           <div v-if="isGalleryOpen" class="absolute left-0 top-full pt-2 w-48 z-50">
             <ul class="bg-white text-green-900 rounded shadow-lg py-2 border border-gray-100">
               <li>
-                <RouterLink to="/gallery/photos" class="dropdown-link">Photos</RouterLink>
+                <RouterLink to="/gallery/photos" class="dropdown-link">{{ labels.photos }}</RouterLink>
               </li>
               <li>
-                <RouterLink to="/gallery/videos" class="dropdown-link">Videos</RouterLink>
+                <RouterLink to="/gallery/videos" class="dropdown-link">{{ labels.videos }}</RouterLink>
               </li>
             </ul>
           </div>
@@ -59,7 +60,7 @@ const isDestinationOpen = ref(false)
           @mouseleave="isDestinationOpen = false"
         >
           <span class="nav-link">
-            Destination
+            {{ labels.destination }}
             <span
               class="text-xs transition-transform duration-200"
               :class="{ 'rotate-180 text-yellow-300': isDestinationOpen }"
@@ -71,28 +72,65 @@ const isDestinationOpen = ref(false)
           <div v-if="isDestinationOpen" class="absolute left-0 top-full pt-2 w-48 z-50">
             <ul class="bg-white text-green-900 rounded shadow-lg py-2 border border-gray-100">
               <li>
-                <RouterLink to="/dest/northern" class="dropdown-link">Northern</RouterLink>
+                <RouterLink to="/dest/northern" class="dropdown-link">{{ labels.northern }}</RouterLink>
               </li>
               <li>
-                <RouterLink to="/dest/southern" class="dropdown-link">Southern</RouterLink>
+                <RouterLink to="/dest/southern" class="dropdown-link">{{ labels.southern }}</RouterLink>
               </li>
               <li>
-                <RouterLink to="/dest/eastern" class="dropdown-link">Eastern</RouterLink>
+                <RouterLink to="/dest/eastern" class="dropdown-link">{{ labels.eastern }}</RouterLink>
               </li>
               <li>
-                <RouterLink to="/dest/western" class="dropdown-link">Western</RouterLink>
+                <RouterLink to="/dest/western" class="dropdown-link">{{ labels.western }}</RouterLink>
               </li>
               <li>
-                <RouterLink to="/dest/kigali" class="dropdown-link">Kigali</RouterLink>
+                <RouterLink to="/dest/kigali" class="dropdown-link">{{ labels.kigali }}</RouterLink>
               </li>
             </ul>
           </div>
         </li>
 
         <li>
-          <RouterLink to="/contacts" class="nav-link">Contacts</RouterLink>
+          <RouterLink to="/contact" class="nav-link">{{ labels.contact }}</RouterLink>
+        </li>
+        <li>
+          <RouterLink to="/login" class="nav-link">{{ labels.login }}</RouterLink>
         </li>
       </ul>
+
+      <div class="flex items-center gap-3 text-sm text-white">
+        <span class="font-semibold">{{ labels.language }}</span>
+        <button
+          type="button"
+          @click="setLanguage('EN')"
+          :class="[
+            'rounded-full px-3 py-1 transition',
+            currentLanguage.value === 'EN' ? 'bg-white text-green-900 font-bold' : 'bg-white/15 hover:bg-white/25'
+          ]"
+        >
+          EN
+        </button>
+        <button
+          type="button"
+          @click="setLanguage('FR')"
+          :class="[
+            'rounded-full px-3 py-1 transition',
+            currentLanguage.value === 'FR' ? 'bg-white text-green-900 font-bold' : 'bg-white/15 hover:bg-white/25'
+          ]"
+        >
+          FR
+        </button>
+        <button
+          type="button"
+          @click="setLanguage('RW')"
+          :class="[
+            'rounded-full px-3 py-1 transition',
+            currentLanguage.value === 'RW' ? 'bg-white text-green-900 font-bold' : 'bg-white/15 hover:bg-white/25'
+          ]"
+        >
+          RW
+        </button>
+      </div>
     </nav>
 
     <main class="p-8 flex-grow">
