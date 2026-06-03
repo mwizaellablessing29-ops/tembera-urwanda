@@ -104,11 +104,15 @@ const isLanguageOpen = ref(false)
         </li>
       </ul>
 
-      <div class="relative text-sm text-white">
+      <div class="relative text-sm text-white" @mouseenter="isLanguageOpen = true" @mouseleave="isLanguageOpen = false">
         <span
           class="nav-link cursor-pointer"
-          @mouseenter="isLanguageOpen = true"
-          @mouseleave="isLanguageOpen = false"
+          @click="isLanguageOpen = !isLanguageOpen"
+          @keyup.enter="isLanguageOpen = !isLanguageOpen"
+          @keyup.esc="isLanguageOpen = false"
+          tabindex="0"
+          role="button"
+          :aria-expanded="isLanguageOpen"
         >
           {{ labels.language }}
           <span class="text-xs transition-transform duration-200" :class="{ 'rotate-180 text-yellow-300': isLanguageOpen }">▼</span>
