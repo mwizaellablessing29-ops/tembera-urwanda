@@ -104,26 +104,25 @@ const isLanguageOpen = ref(false)
         </li>
       </ul>
 
-      <div class="relative text-sm text-white" @mouseenter="isLanguageOpen = true" @mouseleave="isLanguageOpen = false">
-        <span
-          class="nav-link cursor-pointer"
+      <div class="relative text-sm text-white">
+        <button
+          type="button"
+          class="nav-link cursor-pointer rounded px-2 py-1 hover:bg-white/10"
           @click="isLanguageOpen = !isLanguageOpen"
           @keyup.enter="isLanguageOpen = !isLanguageOpen"
           @keyup.esc="isLanguageOpen = false"
-          tabindex="0"
-          role="button"
-          :aria-expanded="isLanguageOpen"
+          :aria-expanded="isLanguageOpen.toString()"
         >
           {{ labels.language }}
           <span class="text-xs transition-transform duration-200" :class="{ 'rotate-180 text-yellow-300': isLanguageOpen }">▼</span>
-        </span>
+        </button>
 
         <div v-if="isLanguageOpen" class="absolute right-0 mt-2 w-28 z-50">
           <ul class="bg-white text-green-900 rounded shadow-lg py-2 border border-gray-100">
             <li>
               <button
                 type="button"
-                @click="setLanguage('EN')"
+                @click="setLanguage('EN'); isLanguageOpen = false"
                 class="dropdown-link w-full text-left"
               >
                 EN
@@ -132,7 +131,7 @@ const isLanguageOpen = ref(false)
             <li>
               <button
                 type="button"
-                @click="setLanguage('FR')"
+                @click="setLanguage('FR'); isLanguageOpen = false"
                 class="dropdown-link w-full text-left"
               >
                 FR
@@ -141,7 +140,7 @@ const isLanguageOpen = ref(false)
             <li>
               <button
                 type="button"
-                @click="setLanguage('RW')"
+                @click="setLanguage('RW'); isLanguageOpen = false"
                 class="dropdown-link w-full text-left"
               >
                 RW
