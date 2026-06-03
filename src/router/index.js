@@ -5,7 +5,7 @@ import Contact from '../views/contact.vue'
 import Services from '../views/services.vue'
 import Photos from '../views/gallery/Photos.vue'
 import Videos from '../views/gallery/Videos.vue'
-import dashboard from '../Views/dashboard.vue'
+import Dashboard from '../views/dashboard.vue'
 const routes = [
     {
         path: '/',
@@ -40,7 +40,7 @@ const routes = [
     {
         path: '/dashboard',
         name: 'dashboard',
-        component: dashboard,
+        component: Dashboard,
     },
     
     // --- GALLERY DROPDOWN ROUTES ---
