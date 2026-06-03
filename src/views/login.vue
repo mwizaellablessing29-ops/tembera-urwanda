@@ -1,12 +1,15 @@
 <script setup>
 import { ref } from 'vue'
+import { useRouter } from 'vue-router'
 import { labels } from '../stores/language.js'
 
+const router = useRouter()
 const email = ref('')
 const password = ref('')
 
 const onSubmit = () => {
-  console.log('Signing in with', email.value)
+  // Replace this with real authentication logic if needed.
+  router.push('/dashboard')
 }
 </script>
 

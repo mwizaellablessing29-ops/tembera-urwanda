@@ -15,7 +15,7 @@
           <div class="p-6">
             <h3 class="text-2xl font-bold text-gray-900">Akagera National Park</h3>
             <p class="mt-3 text-gray-600">Big Five safari drives across savanna, wetlands, and forested hills in eastern Rwanda.</p>
-            <router-link to="/destinations/Eastern" class="mt-4 inline-flex text-yellow-600 hover:text-yellow-700 font-semibold">
+            <router-link to="/dest/eastern" class="mt-4 inline-flex text-yellow-600 hover:text-yellow-700 font-semibold">
               View Eastern Province →
             </router-link>
           </div>
@@ -26,7 +26,7 @@
           <div class="p-6">
             <h3 class="text-xl font-bold text-gray-900">Nyungwe Canopy Walk</h3>
             <p class="mt-3 text-gray-600">Walk among the treetops and explore one of Africa's oldest rainforests.</p>
-            <router-link to="/destinations/Southern" class="mt-4 inline-flex text-yellow-600 hover:text-yellow-700 font-semibold">
+            <router-link to="/dest/southern" class="mt-4 inline-flex text-yellow-600 hover:text-yellow-700 font-semibold">
               View Southern Province →
             </router-link>
           </div>
@@ -37,7 +37,7 @@
           <div class="p-6">
             <h3 class="text-xl font-bold text-gray-900">Lake Kivu</h3>
             <p class="mt-3 text-gray-600">Relax on the shores of Africa's clearest lake among dramatic mountains and island views.</p>
-            <router-link to="/destinations/Western" class="mt-4 inline-flex text-yellow-600 hover:text-yellow-700 font-semibold">
+            <router-link to="/dest/western" class="mt-4 inline-flex text-yellow-600 hover:text-yellow-700 font-semibold">
               View Western Province →
             </router-link>
           </div>
@@ -48,7 +48,7 @@
           <div class="p-6">
             <h3 class="text-xl font-bold text-gray-900">Northern Mountains</h3>
             <p class="mt-3 text-gray-600">Volcanic peaks, lush valleys, and gorilla trekking routes in Rwanda's northern region.</p>
-            <router-link to="/destinations/Northern" class="mt-4 inline-flex text-yellow-600 hover:text-yellow-700 font-semibold">
+            <router-link to="/dest/northern" class="mt-4 inline-flex text-yellow-600 hover:text-yellow-700 font-semibold">
               View Northern Province →
             </router-link>
           </div>

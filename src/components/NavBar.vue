@@ -5,6 +5,7 @@ import { currentLanguage, setLanguage, labels } from '../stores/language.js'
 
 const isGalleryOpen = ref(false)
 const isDestinationOpen = ref(false)
+const isLanguageOpen = ref(false)
 </script>
 
 <template>
@@ -94,42 +95,56 @@ const isDestinationOpen = ref(false)
           <RouterLink to="/contact" class="nav-link">{{ labels.contact }}</RouterLink>
         </li>
         <li>
-          <RouterLink to="/login" class="nav-link">{{ labels.login }}</RouterLink>
+          <RouterLink
+            to="/login"
+            class="bg-yellow-400 text-green-900 font-semibold px-4 py-2 rounded hover:bg-yellow-500 transition"
+          >
+            {{ labels.login }}
+          </RouterLink>
         </li>
       </ul>
 
-      <div class="flex items-center gap-3 text-sm text-white">
-        <span class="font-semibold">{{ labels.language }}</span>
-        <button
-          type="button"
-          @click="setLanguage('EN')"
-          :class="[
-            'rounded-full px-3 py-1 transition',
-            currentLanguage.value === 'EN' ? 'bg-white text-green-900 font-bold' : 'bg-white/15 hover:bg-white/25'
-          ]"
+      <div class="relative text-sm text-white">
+        <span
+          class="nav-link cursor-pointer"
+          @mouseenter="isLanguageOpen = true"
+          @mouseleave="isLanguageOpen = false"
         >
-          EN
-        </button>
-        <button
-          type="button"
-          @click="setLanguage('FR')"
-          :class="[
-            'rounded-full px-3 py-1 transition',
-            currentLanguage.value === 'FR' ? 'bg-white text-green-900 font-bold' : 'bg-white/15 hover:bg-white/25'
-          ]"
-        >
-          FR
-        </button>
-        <button
-          type="button"
-          @click="setLanguage('RW')"
-          :class="[
-            'rounded-full px-3 py-1 transition',
-            currentLanguage.value === 'RW' ? 'bg-white text-green-900 font-bold' : 'bg-white/15 hover:bg-white/25'
-          ]"
-        >
-          RW
-        </button>
+          {{ labels.language }}
+          <span class="text-xs transition-transform duration-200" :class="{ 'rotate-180 text-yellow-300': isLanguageOpen }">▼</span>
+        </span>
+
+        <div v-if="isLanguageOpen" class="absolute right-0 mt-2 w-28 z-50">
+          <ul class="bg-white text-green-900 rounded shadow-lg py-2 border border-gray-100">
+            <li>
+              <button
+                type="button"
+                @click="setLanguage('EN')"
+                class="dropdown-link w-full text-left"
+              >
+                EN
+              </button>
+            </li>
+            <li>
+              <button
+                type="button"
+                @click="setLanguage('FR')"
+                class="dropdown-link w-full text-left"
+              >
+                FR
+              </button>
+            </li>
+            <li>
+              <button
+                type="button"
+                @click="setLanguage('RW')"
+                class="dropdown-link w-full text-left"
+              >
+                RW
+              </button>
+            </li>
+          </ul>
+        </div>
       </div>
     </nav>
 

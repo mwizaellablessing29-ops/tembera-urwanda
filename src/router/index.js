@@ -3,6 +3,9 @@ import Home from '../views/home.vue'
 import About from '../views/about.vue'
 import Contact from '../views/contact.vue'
 import Services from '../views/services.vue'
+import Photos from '../views/gallery/Photos.vue'
+import Videos from '../views/gallery/Videos.vue'
+import dashboard from '../Views/dashboard.vue'
 const routes = [
     {
         path: '/',
@@ -33,6 +36,11 @@ const routes = [
         path: '/register',
         name: 'register',
         component: () => import('../views/register.vue')
+    },
+    {
+        path: '/dashboard',
+        name: 'dashboard',
+        component: dashboard,
     },
     
     // --- GALLERY DROPDOWN ROUTES ---
